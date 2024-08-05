@@ -8,12 +8,49 @@
 import AppKit
 import Cocoa
 
+
 class AppDelegate: NSObject, NSApplicationDelegate {
     var isFirstOpen = true
     var mainWindowController: NotchWindowController?
 
     var timer: Timer?
+    
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+            for url in urls {
+                handleCustomURL(url)
+            }
+        }
 
+        func handleCustomURL(_ url: URL) {
+//            print("Received URL: \(url)")
+            var count = 0
+            if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+               let queryItems = components.queryItems {
+                for queryItem in queryItems {
+                    if queryItem.name == "token", let token = queryItem.value {
+//                        print("Token: \(token)")
+                        UserDefaults.standard.set(token, forKey: "userToken")
+                        count += 1
+                    }
+                    if queryItem.name == "email", let email = queryItem.value {
+                        print("Email: \(email)")
+                        UserDefaults.standard.set(email, forKey: "userEmail")
+                        count += 1
+                    }
+                    if queryItem.name == "sub", let sub = queryItem.value {
+                        print("Subscription: \(sub)")
+                        UserDefaults.standard.set(sub, forKey: "userSubscription")
+                        count += 1
+                    }
+                }
+            }
+            if count == 3 {
+                _ = launchAppFromBrowser(NSApplication.shared, hasVisibleWindows: false)
+            }else{
+                NSAlert.popError("Failed Log in. Invalid Launch URL. Please try again.")
+            }
+        }
     
     func applicationDidFinishLaunching(_: Notification) {
         NotificationCenter.default.addObserver(
@@ -81,7 +118,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard let controller = mainWindowController,
               let vm = controller.vm
         else { return true }
+        
         vm.notchOpen(.click)
+        return true
+    }
+    
+    func launchAppFromBrowser(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
+        guard let controller = mainWindowController,
+              let vm = controller.vm
+        else { return true }
+        
+        vm.notchOpen(.click)
+        vm.detectAccount()
         return true
     }
     

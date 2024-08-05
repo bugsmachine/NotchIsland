@@ -139,7 +139,7 @@ struct NotchView: View {
     var dragDetecter: some View {
         if vm.status == .closed {
             RoundedRectangle(cornerRadius: notchCornerRadius)
-                .foregroundStyle(Color.black.opacity(0.001)) // fuck you apple and 0.001 is the smallest we can have
+                .foregroundStyle(Color.black.opacity(0.001))
                 .contentShape(Rectangle())
                 .frame(width: vm.deviceNotchRect.width + vm.dropDetectorRange, height: vm.deviceNotchRect.height + vm.dropDetectorRange)
                 .onDrop(of: [.data], isTargeted: $dropTargeting) { _ in true }

@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5043817F2C3A86EA000ED325"
-               BuildableName = "NotchDrop.app"
-               BlueprintName = "NotchDrop"
-               ReferencedContainer = "container:NotchDrop.xcodeproj">
+               BuildableName = "NotchIsland.app"
+               BlueprintName = "NotchIsland"
+               ReferencedContainer = "container:NotchIsland.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,11 +45,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5043817F2C3A86EA000ED325"
-            BuildableName = "NotchDrop.app"
-            BlueprintName = "NotchDrop"
-            ReferencedContainer = "container:NotchDrop.xcodeproj">
+            BuildableName = "NotchIsland.app"
+            BlueprintName = "NotchIsland"
+            ReferencedContainer = "container:NotchIsland.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "IDEPreferLogStreaming"
+            value = "YES"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -62,9 +69,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5043817F2C3A86EA000ED325"
-            BuildableName = "NotchDrop.app"
-            BlueprintName = "NotchDrop"
-            ReferencedContainer = "container:NotchDrop.xcodeproj">
+            BuildableName = "NotchIsland.app"
+            BlueprintName = "NotchIsland"
+            ReferencedContainer = "container:NotchIsland.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

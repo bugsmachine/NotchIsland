@@ -7,8 +7,12 @@
 
 import AppKit
 
-let productPage = URL(string: "https://github.com/Lakr233/NotchDrop")!
-let sponsorPage = URL(string: "https://github.com/sponsors/Lakr233")!
+let productPage = URL(string: "https://github.com/bugsmachine/NotchIsland")!
+let sponsorPage = URL(string: "https://github.com/bugsmachine/NotchIsland")!
+let loginPage   = URL(string: "http://localhost:8808/app/login")!
+let logOutPage  = URL(string: "http://localhost:8808/app/logout")!
+let myHomePage  = URL(string: "http://localhost:8808/app/my")!
+let subPage     = URL(string: "http://localhost:8808/app/logout")!
 
 let bundleIdentifier = Bundle.main.bundleIdentifier!
 let appVersion = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))"

@@ -3,10 +3,13 @@ import Combine
 import Foundation
 import SwiftUI
 import LaunchAtLogin
+import Alamofire
 
 class NotchViewModel: NSObject, ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     let inset: CGFloat
+    
+    
     
     @Published var selectedLanguage: Language = .system {
         didSet {
@@ -14,6 +17,9 @@ class NotchViewModel: NSObject, ObservableObject {
             applyLanguage()
         }
     }
+    
+    private var originalLanguage: Language?
+    @Published var originLanguageCode: String?
     
     @Published var selectedFileStorageTime: FileStorageTime = .oneDay {
         didSet {
@@ -70,8 +76,70 @@ class NotchViewModel: NSObject, ObservableObject {
         case normal
         case menu
         case settings
+        case account
     }
     
+    enum loginType: Int, Codable, Hashable, Equatable {
+        case login
+        case notLogin
+    }
+    
+    var loginStatus: loginType = .notLogin
+    
+    func detectAccount(){
+        // Retrieve the token from UserDefaults
+        if let savedToken = UserDefaults.standard.string(forKey: "userToken") {
+            // Use the token as needed
+            loginStatus = .login
+            print("Saved token: \(savedToken)")
+        } else {
+            loginStatus = .notLogin
+            // Handle the case where the token does not exist
+            print("No token found in UserDefaults")
+        }
+        
+        contentType = .account
+    }
+    
+    func moveToNotLogin(){
+        loginStatus = .notLogin
+        contentType = .account
+    }
+    
+    
+    func logoutUser() {
+        let token = UserDefaults.standard.string(forKey: "userToken") ?? "nil"
+        print("Token Get: \(token)")
+        if token != "nil" {
+            print("prepare to logout")
+            let url = "http://localhost:8808/api/logout"
+            let headers: HTTPHeaders = [
+                "Authorization": token,
+                "Accept": "application/json"
+            ]
+
+            AF.request(url, method: .post, headers: headers).response { response in
+                switch response.result {
+                case .success(let data):
+                    if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                        print("Response: \(responseString)")
+                        if responseString.contains("Logout successfully") {
+                            print("Logout successfully")
+                            UserDefaults.standard.removeObject(forKey: "userToken")
+                            UserDefaults.standard.removeObject(forKey: "userEmail")
+                            UserDefaults.standard.removeObject(forKey: "userSubscription")
+                            self.moveToNotLogin()
+                        }
+                    }
+                case .failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                }
+            }
+        }else{
+            print("No token found in UserDefaults")
+        }
+        
+    }
     var notchOpenedRect: CGRect {
         .init(
             x: screenRect.origin.x + (screenRect.width - notchOpenedSize.width) / 2,
@@ -88,6 +156,10 @@ class NotchViewModel: NSObject, ObservableObject {
             width: notchOpenedSize.width,
             height: deviceNotchRect.height
         )
+    }
+    
+    func getLanguageCode() -> String{
+        return originLanguageCode ?? "nil"
     }
     
     @Published private(set) var status: Status = .closed
@@ -119,6 +191,8 @@ class NotchViewModel: NSObject, ObservableObject {
     func showSettings() {
         contentType = .settings
     }
+    
+    
     
     func notchPop() {
         openReason = .unknown
@@ -263,9 +337,17 @@ class NotchViewModel: NSObject, ObservableObject {
         }
 //        print("Applying Language: \(languageCode ?? "none")") // Debug print to verify language being set
         Bundle.setLanguage(languageCode)
+        if count == 1 {
+            originalLanguage = selectedLanguage
+            originLanguageCode = languageCode
+        }
+        
+        print("Original Language: \(String(describing: originalLanguage?.rawValue))")
+            print("Selected Language: \(selectedLanguage.rawValue)")
+            print("Count: \(count)")
         
         // Show alert and restart app
-        if count > 2 {
+        if count > 2 && selectedLanguage != originalLanguage {
             NSAlert.popRestart(NSLocalizedString("The language has been changed. The app will restart for the changes to take effect.", comment: ""), completion: restartApp)
         }
     }

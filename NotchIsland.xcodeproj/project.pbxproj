@@ -41,15 +41,30 @@
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
 		50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */; };
 		50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */; };
+		60408D4B2C5FE7B200E7B180 /* NotchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60408D4A2C5FE7B200E7B180 /* NotchAccountView.swift */; };
+		60408D4E2C60079600E7B180 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 60408D4D2C60079600E7B180 /* Alamofire */; };
 		60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AD62862C579F4400299297 /* NotchSettingsView.swift */; };
 		60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 60AD628B2C59150C00299297 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		60408D522C600BF100E7B180 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		502E41D52C3CEC990060660E /* Ext+NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSAlert.swift"; sourceTree = "<group>"; };
 		503D8EB92C3F838200E173FF /* NotchMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchMenuView.swift; sourceTree = "<group>"; };
-		504381802C3A86EA000ED325 /* NotchDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		504381802C3A86EA000ED325 /* NotchIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504381872C3A86EC000ED325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5043818C2C3A86EC000ED325 /* NotchDrop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotchDrop.entitlements; sourceTree = "<group>"; };
 		504381922C3A8755000ED325 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -76,6 +91,7 @@
 		50E26E262C3AF5E9007CF247 /* TrayDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayDrop.swift; sourceTree = "<group>"; };
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
 		50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSImage.swift"; sourceTree = "<group>"; };
+		60408D4A2C5FE7B200E7B180 /* NotchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchAccountView.swift; sourceTree = "<group>"; };
 		60AD62862C579F4400299297 /* NotchSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60408D4E2C60079600E7B180 /* Alamofire in Frameworks */,
 				5044EEAD2C3B174100071C5C /* HashTreeCollections in Frameworks */,
 				5043819E2C3A8ACA000ED325 /* ColorfulX in Frameworks */,
 				5044EE9C2C3B082300071C5C /* Pow in Frameworks */,
@@ -110,7 +127,7 @@
 		504381812C3A86EA000ED325 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				504381802C3A86EA000ED325 /* NotchDrop.app */,
+				504381802C3A86EA000ED325 /* NotchIsland.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +148,7 @@
 				503D8EB92C3F838200E173FF /* NotchMenuView.swift */,
 				504381AE2C3ADFF2000ED325 /* NotchContentView.swift */,
 				60AD62862C579F4400299297 /* NotchSettingsView.swift */,
+				60408D4A2C5FE7B200E7B180 /* NotchAccountView.swift */,
 				504381A52C3A8CFD000ED325 /* NotchViewController.swift */,
 				504381A72C3A926E000ED325 /* NotchViewModel.swift */,
 				50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */,
@@ -162,19 +180,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5043817F2C3A86EA000ED325 /* NotchDrop */ = {
+		5043817F2C3A86EA000ED325 /* NotchIsland */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5043818F2C3A86EC000ED325 /* Build configuration list for PBXNativeTarget "NotchDrop" */;
+			buildConfigurationList = 5043818F2C3A86EC000ED325 /* Build configuration list for PBXNativeTarget "NotchIsland" */;
 			buildPhases = (
 				5043817C2C3A86EA000ED325 /* Sources */,
 				5043817D2C3A86EA000ED325 /* Frameworks */,
 				5043817E2C3A86EA000ED325 /* Resources */,
+				60408D522C600BF100E7B180 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = NotchDrop;
+			name = NotchIsland;
 			packageProductDependencies = (
 				5043819D2C3A8ACA000ED325 /* ColorfulX */,
 				5044EE9B2C3B082300071C5C /* Pow */,
@@ -184,9 +203,10 @@
 				5044EEAC2C3B174100071C5C /* HashTreeCollections */,
 				5044EEAE2C3B174100071C5C /* HeapModule */,
 				60AD628B2C59150C00299297 /* LaunchAtLogin */,
+				60408D4D2C60079600E7B180 /* Alamofire */,
 			);
 			productName = NotchDrop;
-			productReference = 504381802C3A86EA000ED325 /* NotchDrop.app */;
+			productReference = 504381802C3A86EA000ED325 /* NotchIsland.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5043817B2C3A86EA000ED325 /* Build configuration list for PBXProject "NotchDrop" */;
+			buildConfigurationList = 5043817B2C3A86EA000ED325 /* Build configuration list for PBXProject "NotchIsland" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,12 +240,13 @@
 				5044EE9A2C3B082300071C5C /* XCRemoteSwiftPackageReference "Pow" */,
 				5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */,
 				60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
+				60408D4C2C60079600E7B180 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 504381812C3A86EA000ED325 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5043817F2C3A86EA000ED325 /* NotchDrop */,
+				5043817F2C3A86EA000ED325 /* NotchIsland */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +282,7 @@
 				504381A22C3A8BE0000ED325 /* Ext+NSScreen.swift in Sources */,
 				5044EE972C3B063400071C5C /* AirDrop+View.swift in Sources */,
 				50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */,
+				60408D4B2C5FE7B200E7B180 /* NotchAccountView.swift in Sources */,
 				5044EEA42C3B140F00071C5C /* Ext+URL.swift in Sources */,
 				5044EE992C3B069200071C5C /* TrayDrop+View.swift in Sources */,
 				50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */,
@@ -464,7 +486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5043817B2C3A86EA000ED325 /* Build configuration list for PBXProject "NotchDrop" */ = {
+		5043817B2C3A86EA000ED325 /* Build configuration list for PBXProject "NotchIsland" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5043818D2C3A86EC000ED325 /* Debug */,
@@ -473,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5043818F2C3A86EC000ED325 /* Build configuration list for PBXNativeTarget "NotchDrop" */ = {
+		5043818F2C3A86EC000ED325 /* Build configuration list for PBXNativeTarget "NotchIsland" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				504381902C3A86EC000ED325 /* Debug */,
@@ -507,6 +529,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.1;
+			};
+		};
+		60408D4C2C60079600E7B180 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
 			};
 		};
 		60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
@@ -554,6 +584,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = HeapModule;
+		};
+		60408D4D2C60079600E7B180 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60408D4C2C60079600E7B180 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		60AD628B2C59150C00299297 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;

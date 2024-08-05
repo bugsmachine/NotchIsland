@@ -15,8 +15,8 @@ struct NotchMenuView: View {
     var body: some View {
         HStack(spacing: vm.spacing) {
             close
-            if !vm.openedSponsorPage { donate }
             github
+            account
             clear
             settings
         }
@@ -38,7 +38,7 @@ struct NotchMenuView: View {
     var donate: some View {
         ColorButton(
             color: ColorfulPreset.colorful.colors,
-            image: Image(systemName: "dollarsign"),
+            image: Image(systemName: "heart.fill"),
             title: "Donate"
         )
         .onTapGesture {
@@ -84,6 +84,20 @@ struct NotchMenuView: View {
         )
         .onTapGesture {
             vm.showSettings()
+        }
+        .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
+    }
+    
+    var account: some View {
+        ColorButton(
+            color: ColorfulPreset.colorful.colors,
+            image: Image(systemName: "person.fill"),
+            title: "Account"
+        )
+        .onTapGesture {
+            vm.detectAccount()
+//            NSWorkspace.shared.open(loginPage)
+//            vm.notchClose()
         }
         .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
     }
