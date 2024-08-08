@@ -3,12 +3,12 @@
     <channel>
         <title>NotchIsland</title>
         <item>
-            <title>0.9</title>
-            <pubDate>Fri, 09 Aug 2024 03:15:12 +0800</pubDate>
-            <sparkle:version>0.9</sparkle:version>
-            <sparkle:shortVersionString>0.9</sparkle:shortVersionString>
+            <title>1.1</title>
+            <pubDate>Fri, 09 Aug 2024 03:29:54 +0800</pubDate>
+            <sparkle:version>1.1</sparkle:version>
+            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/bugsmachine/NotchIsland/releases/download/prod/NotchIsland.zip" length="9349455" type="application/octet-stream" sparkle:edSignature="4hGV3APN2hmIlZ5ICRXgqEr4v1DmSjTFZuAhQt+5l0VkA3K7yNLu4qsOBCVB12T+v+7Wpe9JkvYQU+2oRW16DQ=="/>
+            <enclosure url="https://github.com/bugsmachine/NotchIsland/releases/download/prod/NotchIsland.zip" length="9349472" type="application/octet-stream" sparkle:edSignature="bfCJqRFGcIpiv1nOV92txf4P5PUrwvTkuNXa6LfxxGZ+XxfRokHJOtAncm7wVGuu5VXZ7QCOyzfv5MAlX7YyCQ=="/>
         </item>
     </channel>
 </rss>
