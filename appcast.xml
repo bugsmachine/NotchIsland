@@ -8,7 +8,7 @@
             <sparkle:version>0.9</sparkle:version>
             <sparkle:shortVersionString>1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/bugsmachine/NotchIsland/releases/download/prod/NotchIsland.zip length="9350177" type="application/octet-stream" sparkle:edSignature="y50Dza/A7pBLcBLIjhDWBlGYPnBW4jo1Bq2sirLFeSLIA7m9ZSkGSsUcg7JP7DK6HO/XwmX0yTc3LvGDW6HdAg=="/>
+            <enclosure url="https://github.com/bugsmachine/NotchIsland/releases/download/prod/NotchIsland.zip" length="9350177" type="application/octet-stream" sparkle:edSignature="y50Dza/A7pBLcBLIjhDWBlGYPnBW4jo1Bq2sirLFeSLIA7m9ZSkGSsUcg7JP7DK6HO/XwmX0yTc3LvGDW6HdAg=="/>
         </item>
     </channel>
 </rss>
