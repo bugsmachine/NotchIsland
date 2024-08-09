@@ -7,14 +7,39 @@
 
 import AppKit
 import Cocoa
+import Sparkle
 
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var isFirstOpen = true
     var mainWindowController: NotchWindowController?
+    var settingsWindow: SettingsWindow?
 
     var timer: Timer?
     
+//    let updaterController: SPUStandardUpdaterController
+//    
+//    override init() {
+//            // Initialize the Sparkle updater controller
+//            updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+//            super.init()
+//        }
+//    
+//    
+//    
+//    @IBAction func checkForUpdates(_ sender: Any) {
+//        updaterController.checkForUpdates(nil)
+//    }
+    
+    func openSettings() {
+            if settingsWindow == nil {
+                settingsWindow = SettingsWindow()
+            }
+            settingsWindow?.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+        }
+
+
     
     func application(_ application: NSApplication, open urls: [URL]) {
             for url in urls {
@@ -42,17 +67,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         print("Subscription: \(sub)")
                         UserDefaults.standard.set(sub, forKey: "userSubscription")
                         count += 1
+                        let maxStorage = getMaxStorage(subscription: sub)
+                        print("Max Storage: \(maxStorage)")
+                        UserDefaults.standard.set(maxStorage, forKey: "maxStorage")
+                    }
+                    if queryItem.name == "id", let id = queryItem.value {
+                        print("id: \(id)")
+                        UserDefaults.standard.set(id, forKey: "userID")
+                        count += 1
                     }
                 }
             }
-            if count == 3 {
+            if count == 4 {
                 _ = launchAppFromBrowser(NSApplication.shared, hasVisibleWindows: false)
             }else{
                 NSAlert.popError("Failed Log in. Invalid Launch URL. Please try again.")
             }
         }
     
+    func getMaxStorage(subscription: String) -> Int {
+        switch subscription {
+        case "Free":
+            return 100
+        case "Bronze":
+            return 300
+        case "Silver":
+            return 500
+        case "Golden":
+            return 1000
+        default:
+            return 100
+        }
+        
+    }
+    
     func applicationDidFinishLaunching(_: Notification) {
+        
+//        updaterController.startUpdater()
+//        updaterController.updater.checkForUpdatesInBackground()
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(rebuildApplicationWindows),

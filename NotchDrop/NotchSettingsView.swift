@@ -29,7 +29,7 @@ struct NotchSettingsView: View {
                     .padding(.leading, 60) // Adjust the padding to reduce the space
                 Spacer()
             }
-            .padding(.vertical, 5)
+            .padding(.top, -20)
 
             HStack {
                 Picker("File Storage Time: ", selection: $vm.selectedFileStorageTime) {
@@ -56,10 +56,20 @@ struct NotchSettingsView: View {
                 }
                 Spacer()
             }
-            .padding(.vertical, 5)
+            .padding(.vertical, -2)
+            HStack{
+                Button(action: {
+                    vm.openMoreSettings()
+                }) {
+                    Text("More Sttings")
+                }
+                Spacer()
+                .transition(.scale(scale: 0.6).combined(with: .opacity))
+            }
         }
         .padding()
         .transition(.scale(scale: 0.8).combined(with: .opacity))
+        
     }
 }
 

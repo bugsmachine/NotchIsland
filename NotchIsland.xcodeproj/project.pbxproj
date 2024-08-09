@@ -43,6 +43,11 @@
 		50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */; };
 		60408D4B2C5FE7B200E7B180 /* NotchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60408D4A2C5FE7B200E7B180 /* NotchAccountView.swift */; };
 		60408D4E2C60079600E7B180 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 60408D4D2C60079600E7B180 /* Alamofire */; };
+		60408D562C62913600E7B180 /* FileActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60408D552C62913600E7B180 /* FileActions.swift */; };
+		60408D592C65408D00E7B180 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 60408D582C65408D00E7B180 /* Sparkle */; };
+		60408D5C2C6548A500E7B180 /* CheckForUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60408D5B2C6548A500E7B180 /* CheckForUpdates.swift */; };
+		60408D622C66A68200E7B180 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60408D612C66A68200E7B180 /* SettingView.swift */; };
+		60408D642C66A69000E7B180 /* SettingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60408D632C66A69000E7B180 /* SettingWindow.swift */; };
 		60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AD62862C579F4400299297 /* NotchSettingsView.swift */; };
 		60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 60AD628B2C59150C00299297 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
@@ -92,6 +97,10 @@
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
 		50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSImage.swift"; sourceTree = "<group>"; };
 		60408D4A2C5FE7B200E7B180 /* NotchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchAccountView.swift; sourceTree = "<group>"; };
+		60408D552C62913600E7B180 /* FileActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileActions.swift; sourceTree = "<group>"; };
+		60408D5B2C6548A500E7B180 /* CheckForUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForUpdates.swift; sourceTree = "<group>"; };
+		60408D612C66A68200E7B180 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		60408D632C66A69000E7B180 /* SettingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWindow.swift; sourceTree = "<group>"; };
 		60AD62862C579F4400299297 /* NotchSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +114,7 @@
 				5043819E2C3A8ACA000ED325 /* ColorfulX in Frameworks */,
 				5044EE9C2C3B082300071C5C /* Pow in Frameworks */,
 				5044EEAF2C3B174100071C5C /* HeapModule in Frameworks */,
+				60408D592C65408D00E7B180 /* Sparkle in Frameworks */,
 				5044EEAB2C3B174100071C5C /* DequeModule in Frameworks */,
 				5044EEA92C3B174100071C5C /* Collections in Frameworks */,
 				60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */,
@@ -158,6 +168,7 @@
 				5044EE962C3B063400071C5C /* AirDrop+View.swift */,
 				50E26E262C3AF5E9007CF247 /* TrayDrop.swift */,
 				50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */,
+				60408D552C62913600E7B180 /* FileActions.swift */,
 				5044EE982C3B069200071C5C /* TrayDrop+View.swift */,
 				5044EEA12C3B126F00071C5C /* TrayDrop+DropItemView.swift */,
 				5044EEA32C3B140F00071C5C /* Ext+URL.swift */,
@@ -166,6 +177,9 @@
 				5044EE9D2C3B0F3D00071C5C /* Ext+FileProvider.swift */,
 				502E41D52C3CEC990060660E /* Ext+NSAlert.swift */,
 				5044EE9F2C3B116000071C5C /* PublishedPersist.swift */,
+				60408D5B2C6548A500E7B180 /* CheckForUpdates.swift */,
+				60408D612C66A68200E7B180 /* SettingView.swift */,
+				60408D632C66A69000E7B180 /* SettingWindow.swift */,
 			);
 			path = NotchDrop;
 			sourceTree = "<group>";
@@ -204,6 +218,7 @@
 				5044EEAE2C3B174100071C5C /* HeapModule */,
 				60AD628B2C59150C00299297 /* LaunchAtLogin */,
 				60408D4D2C60079600E7B180 /* Alamofire */,
+				60408D582C65408D00E7B180 /* Sparkle */,
 			);
 			productName = NotchDrop;
 			productReference = 504381802C3A86EA000ED325 /* NotchIsland.app */;
@@ -241,6 +256,7 @@
 				5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */,
 				60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
 				60408D4C2C60079600E7B180 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				60408D572C65408D00E7B180 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 504381812C3A86EA000ED325 /* Products */;
 			projectDirPath = "";
@@ -280,6 +296,7 @@
 				504381B12C3AE0B6000ED325 /* NotchHeaderView.swift in Sources */,
 				50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */,
 				504381A22C3A8BE0000ED325 /* Ext+NSScreen.swift in Sources */,
+				60408D5C2C6548A500E7B180 /* CheckForUpdates.swift in Sources */,
 				5044EE972C3B063400071C5C /* AirDrop+View.swift in Sources */,
 				50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */,
 				60408D4B2C5FE7B200E7B180 /* NotchAccountView.swift in Sources */,
@@ -288,11 +305,14 @@
 				50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */,
 				504381AC2C3A95BD000ED325 /* EventMonitors.swift in Sources */,
 				502E41D62C3CEC990060660E /* Ext+NSAlert.swift in Sources */,
+				60408D622C66A68200E7B180 /* SettingView.swift in Sources */,
 				504381A62C3A8CFD000ED325 /* NotchViewController.swift in Sources */,
 				504381AA2C3A9514000ED325 /* EventMonitor.swift in Sources */,
 				5043819B2C3A8A06000ED325 /* AppDelegate.swift in Sources */,
 				504381932C3A8755000ED325 /* main.swift in Sources */,
 				60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */,
+				60408D642C66A69000E7B180 /* SettingWindow.swift in Sources */,
+				60408D562C62913600E7B180 /* FileActions.swift in Sources */,
 				504381A82C3A926E000ED325 /* NotchViewModel.swift in Sources */,
 				5044EEA02C3B116000071C5C /* PublishedPersist.swift in Sources */,
 			);
@@ -431,13 +451,13 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 3M9AU26G24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotchDrop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
+				INFOPLIST_KEY_CFBundleDisplayName = NotchIsland;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -445,8 +465,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.2;
-				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchIsland;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -458,16 +478,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
+				CODE_SIGN_ENTITLEMENTS = NotchIslandRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 3M9AU26G24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotchDrop/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
+				INFOPLIST_KEY_CFBundleDisplayName = NotchIsland;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,8 +495,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.2;
-				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchIsland;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -539,6 +559,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		60408D572C65408D00E7B180 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.4;
+			};
+		};
 		60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
@@ -589,6 +617,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 60408D4C2C60079600E7B180 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		60408D582C65408D00E7B180 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60408D572C65408D00E7B180 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		60AD628B2C59150C00299297 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;

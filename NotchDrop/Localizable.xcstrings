@@ -320,6 +320,9 @@
         }
       }
     },
+    "Fetching file states..." : {
+
+    },
     "File Storage Time: " : {
       "localizations" : {
         "zh-Hans" : {
@@ -452,6 +455,9 @@
         }
       }
     },
+    "Loading..." : {
+
+    },
     "Login or Register" : {
       "localizations" : {
         "zh-Hans" : {
@@ -489,6 +495,9 @@
         }
       }
     },
+    "More Sttings" : {
+
+    },
     "Need Restart" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -502,23 +511,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "需要重新啟動"
-          }
-        }
-      }
-    },
-    "Notch Drop" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "简放岛"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "簡放島"
           }
         }
       }
@@ -697,6 +689,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "兩天"
+          }
+        }
+      }
+    },
+    "Update" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新"
           }
         }
       }

@@ -15,7 +15,7 @@ struct NotchMenuView: View {
     var body: some View {
         HStack(spacing: vm.spacing) {
             close
-            github
+            updater
             account
             clear
             settings
@@ -84,6 +84,19 @@ struct NotchMenuView: View {
         )
         .onTapGesture {
             vm.showSettings()
+        }
+        .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
+    }
+    
+    
+    var updater: some View {
+        ColorButton(
+            color: ColorfulPreset.colorful.colors,
+            image: Image(systemName: "arrow.clockwise"),
+            title: "Update"
+        )
+        .onTapGesture {
+            vm.checkUpdate()
         }
         .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
     }

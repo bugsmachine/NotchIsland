@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct SettingWindow: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class SettingsWindow: NSWindow {
+    init() {
+        super.init(contentRect: NSRect(x: 100, y: 100, width: 300, height: 200),
+                   styleMask: [.titled, .closable, .miniaturizable, .resizable],
+                   backing: .buffered,
+                   defer: false)
+        
+        self.center()
+        self.setFrameAutosaveName("Settings Window")
+        self.contentView = NSHostingView(rootView: SettingsView())
+        self.makeKeyAndOrderFront(nil)
     }
-}
-
-#Preview {
-    SettingWindow()
 }

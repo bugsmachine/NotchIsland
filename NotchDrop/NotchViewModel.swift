@@ -4,12 +4,20 @@ import Foundation
 import SwiftUI
 import LaunchAtLogin
 import Alamofire
+import Sparkle
 
 class NotchViewModel: NSObject, ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     let inset: CGFloat
     
+    var updaterController: SPUStandardUpdaterController
     
+    func feedURLString(for updater: SPUUpdater) -> String? {
+            return "https://raw.githubusercontent.com/bugsmachine/NotchIsland/main/appcast.xml"
+    }
+    
+
+        
     
     @Published var selectedLanguage: Language = .system {
         didSet {
@@ -42,9 +50,16 @@ class NotchViewModel: NSObject, ObservableObject {
     
     init(inset: CGFloat = -4) {
         self.inset = inset
+        self.updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+        print(updaterController.updater.feedURL)
+
         super.init()
         setupCancellables()
         loadSettings()
+    }
+    
+    func checkUpdate() {
+        updaterController.checkForUpdates(nil)
     }
     
     deinit {
@@ -106,6 +121,11 @@ class NotchViewModel: NSObject, ObservableObject {
         contentType = .account
     }
     
+    func openMoreSettings() {
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.openSettings()
+        }
+    }
     
     func logoutUser() {
         let token = UserDefaults.standard.string(forKey: "userToken") ?? "nil"

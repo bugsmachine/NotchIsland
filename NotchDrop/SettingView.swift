@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct SettingView: View {
+struct SettingsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Settings")
+                .font(.title)
+            // Add your settings controls here
+        }
+        .frame(width: 300, height: 200)
+        .padding()
     }
-}
-
-#Preview {
-    SettingView()
 }

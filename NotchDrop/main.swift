@@ -16,7 +16,8 @@ let subPage     = URL(string: "http://localhost:8808/app/logout")!
 
 let bundleIdentifier = Bundle.main.bundleIdentifier!
 let appVersion = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))"
-
+print("Bundle Identifier: \(bundleIdentifier)")
+print("App Version: \(appVersion)")
 private let availableDirectories = FileManager
     .default
     .urls(for: .documentDirectory, in: .userDomainMask)
