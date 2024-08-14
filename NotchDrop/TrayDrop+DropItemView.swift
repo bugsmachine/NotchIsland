@@ -11,7 +11,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct DropItemView: View {
-    let item: TrayDrop.DropItem
+    @ObservedObject var item: TrayDrop.DropItem
     @StateObject var vm: NotchViewModel
     @StateObject var tvm = TrayDrop.shared
 

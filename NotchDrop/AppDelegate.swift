@@ -13,29 +13,23 @@ import Sparkle
 class AppDelegate: NSObject, NSApplicationDelegate {
     var isFirstOpen = true
     var mainWindowController: NotchWindowController?
-    var settingsWindow: SettingsWindow?
+    
 
     var timer: Timer?
     
-//    let updaterController: SPUStandardUpdaterController
-//    
-//    override init() {
-//            // Initialize the Sparkle updater controller
-//            updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
-//            super.init()
-//        }
-//    
-//    
-//    
-//    @IBAction func checkForUpdates(_ sender: Any) {
-//        updaterController.checkForUpdates(nil)
-//    }
     
-    func openSettings() {
-            if settingsWindow == nil {
-                settingsWindow = SettingsWindow()
+    var settingsWindowController: NSWindowController?
+
+        func openSettings() {
+            if settingsWindowController == nil {
+                let settingsWindow = SettingsWindow(contentRect: NSRect(x: 100, y: 100, width: 300, height: 200),
+                                                    styleMask: [.titled, .closable, .miniaturizable, .resizable],
+                                                    backing: .buffered,
+                                                    defer: false)
+                settingsWindowController = NSWindowController(window: settingsWindow)
             }
-            settingsWindow?.makeKeyAndOrderFront(nil)
+            
+            settingsWindowController?.showWindow(nil)
             NSApp.activate(ignoringOtherApps: true)
         }
 

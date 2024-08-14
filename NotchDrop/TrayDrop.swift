@@ -25,6 +25,7 @@ class TrayDrop: ObservableObject {
     var items: OrderedSet<DropItem>
 
     @Published var isLoading: Int = 0
+    
 
     func load(_ providers: [NSItemProvider]) {
         assert(!Thread.isMainThread)

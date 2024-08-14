@@ -40,13 +40,15 @@ extension TrayDrop {
             if user_id != "" {
                 state = .uploading
                 uploadFile(fileURL: storageURL, chunkSize: 1024 * 1024 * 5) { is_success in
-                    if is_success {
-                        print("File upload successful")
-                        self.state = .uploaded
-                    } else {
-                        self.state = .error
-                        print("File upload failed")
-                    }
+                    DispatchQueue.main.async {
+                                        if is_success {
+                                            print("File upload successful")
+                                            self.state = .uploaded
+                                        } else {
+                                            self.state = .error
+                                            print("File upload failed")
+                                        }
+                                    }
                 }
             }
         }

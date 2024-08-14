@@ -19,7 +19,7 @@ struct TrayView: View {
             dispatchGroup.enter()
             checkIfFileOnCloud(fileName: item.fileName, user: user) { isOnCloud in
                 DispatchQueue.main.async {
-                    item.state = isOnCloud ? .uploaded : .idle
+                    item.state = isOnCloud ? .uploaded : .notInCloud
                     dispatchGroup.leave()
                 }
             }
@@ -52,7 +52,10 @@ struct TrayView: View {
     var body: some View {
         panel
             .onDrop(of: [.data], isTargeted: $targeting) { providers in
-                DispatchQueue.global().async { tvm.load(providers) }
+                DispatchQueue.global().async {
+                    tvm.load(providers)
+                    print("Dropped new item")
+                }
                 return true
             }
             .onAppear {
